@@ -5,10 +5,10 @@ class Ecctl < Formula
   version "1.0.0-rc1"
 
   if OS.mac?
-    url "https://github.com/elastic/ecctl/releases/download/1.0.0-rc1/ecctl_1.0.0-rc1_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
+    url "https://download.elastic.co/downloads/ecctl/1.0.0-rc1/ecctl_1.0.0-rc1_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
     sha256 "ba8ba035995100f396d5e6de017909a782edf60ef3a1a0783b14976ad1c582c0"
   elsif OS.linux?
-    url "https://github.com/elastic/ecctl/releases/download/1.0.0-rc1/ecctl_1.0.0-rc1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+    url "https://download.elastic.co/downloads/ecctl/1.0.0-rc1/ecctl_1.0.0-rc1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
     sha256 "4654d78ec273ef7aa2d5f790621a588974d889fe68c5b1f5a7370ce2937df319"
   end
 
