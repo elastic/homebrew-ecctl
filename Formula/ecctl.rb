@@ -2,14 +2,14 @@
 class Ecctl < Formula
   desc "Elastic Cloud Control, the official Elastic Cloud and ECE command line interface"
   homepage "https://github.com/elastic/ecctl"
-  version "1.0.0-rc1"
+  version "1.0.0-beta1"
 
   if OS.mac?
-    url "https://download.elastic.co/downloads/ecctl/1.0.0-rc1/ecctl_1.0.0-rc1_darwin_amd64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "ba8ba035995100f396d5e6de017909a782edf60ef3a1a0783b14976ad1c582c0"
+    url "https://github.com/elastic/ecctl/releases/download/v1.0.0-beta1/ecctl_v1.0.0-beta1_darwin_amd64.tar.gz"
+    sha256 "2dd108520121dc9937ebc5bd61d730dd92207f797c6257fbb33a3bed1d7a83c3"
   elsif OS.linux?
-    url "https://download.elastic.co/downloads/ecctl/1.0.0-rc1/ecctl_1.0.0-rc1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-    sha256 "4654d78ec273ef7aa2d5f790621a588974d889fe68c5b1f5a7370ce2937df319"
+    url "https://github.com/elastic/ecctl/releases/download/v1.0.0-beta1/ecctl_v1.0.0-beta1_linux_amd64.tar.gz"
+    sha256 "36a9e358b8da64c19da25ff7a032ad32599dfa462ddf627f9b6cb51b5d607f09"
   end
 
   def install
@@ -18,9 +18,8 @@ class Ecctl < Formula
   end
 
   def caveats; <<~EOS
-    Make sure to source #{var}/ecctl.auto for autocompletions
-    If you have previously built ecctl from source, make sure you've removed that 
-    binary from any directory that has been added to your user $PATH.
+    If you have previously built ecctl from source, make sure you've removed that binary from any directory that has been added to your user $PATH.
+    To enable autocompletion make sure to run `source <(ecctl generate completions)` and add it to your shell interpreter configuration file by running `echo "source <(ecctl generate completions)" >> ~/.bash_profile` or `echo "source <(ecctl generate completions)" >> ~/.zshrc` in case you are using ZSH.
   EOS
   end
 
